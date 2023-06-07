@@ -1,1 +1,1 @@
-<h1 align="center">Buzz Wise Machine Learning Model</h1>
+<h1 align="center">Buzz Wise Machine Learning Models</h1>

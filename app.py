@@ -1,4 +1,3 @@
-#Inisiasi
 from fastapi import FastAPI
 import numpy as np
 import pickle
@@ -8,9 +7,9 @@ import tensorflow as tf
 app = FastAPI()
 
 #LoadData
-with open('model/word2int.pkl', 'rb') as f:
+with open('./models/word2int.pkl', 'rb') as f:
     word2int = pickle.load(f)
-with open('model/vectors.pkl', 'rb') as f:
+with open('./models/vectors.pkl', 'rb') as f:
     vectors = pickle.load(f)
 
     
@@ -26,7 +25,7 @@ normalized_vectors = tf.nn.l2_normalize(vectors, axis=1)
 # Calculate cosine similarity
 cos_sim = tf.matmul(normalized_vectors, tf.expand_dims(normalized_target, axis=1))
 
-#Endpoint method
+# Endpoint method
 @app.get("/api/searching/{input_word}")
 def get_similar_words(input_word: str):
     target_word_vector = vectors[word2int[input_word]]

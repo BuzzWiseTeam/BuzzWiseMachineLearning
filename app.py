@@ -6,7 +6,7 @@ import tensorflow as tf
 
 app = FastAPI()
 
-#LoadData
+# LoadData
 with open('./models/word2int.pkl', 'rb') as f:
     word2int = pickle.load(f)
 with open('./models/vectors.pkl', 'rb') as f:
@@ -24,6 +24,10 @@ normalized_vectors = tf.nn.l2_normalize(vectors, axis=1)
 
 # Calculate cosine similarity
 cos_sim = tf.matmul(normalized_vectors, tf.expand_dims(normalized_target, axis=1))
+
+@app.get("/")
+def read_root():
+    return {"message": "Success Bro!", "status": "200"}
 
 # Endpoint method
 @app.get("/api/searching/{input_word}")

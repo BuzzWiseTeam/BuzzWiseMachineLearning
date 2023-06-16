@@ -27,7 +27,7 @@ cos_sim = tf.matmul(normalized_vectors, tf.expand_dims(normalized_target, axis=1
 
 @app.get("/")
 def read_root():
-    return {"message": "Success Bro!", "status": "200"}
+    return {"message": "Success Bro!", "status": "OK", "code": "200"}
 
 # Endpoint method
 @app.get("/api/searching/{input_word}")

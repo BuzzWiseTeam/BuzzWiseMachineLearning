@@ -6,5 +6,3 @@
 - Activate using `[name]/Scripts/activate`
 - Install dependencies with `pip install -r requirements.txt`
 - Run by typing `uvicorn app:app --reload`
-- Open the documentation
-- Done

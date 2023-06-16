@@ -1,6 +1,6 @@
 # Use the official lightweight Python image.
 # https://hub.docker.com/_/python
-FROM python:3.11-slim
+FROM python:3.9-slim@sha256:980b778550c0d938574f1b556362b27601ea5c620130a572feb63ac1df03eda5
 
 # Allow statements and log messages to immediately appear in the logs
 ENV PYTHONUNBUFFERED True
